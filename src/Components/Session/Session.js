@@ -1,14 +1,19 @@
+import { Link } from 'react-router-dom';
 import './Session.css';
 
 export default function Session({
+                                id, 
                                 date, 
                                 showtimes, 
                                 weekday,
                                 }) {
     
     const fullDate = `${weekday} - ${date}`;
-    const randomShowTimes = showtimes.map((showtime) => (
-        <div className='time'>{showtime.name}</div>
+
+    const randomShowTimes = showtimes.map((showtime, index) => (
+        <Link key={index} to={"/assentos/" + showtime.id}>
+            <div className='time'>{showtime.name}</div>
+        </Link>
     ))
 
     return (

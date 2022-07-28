@@ -7,22 +7,23 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 
 export default function ChooseSessionScreen() {
-    const { idFilme } = useParams();
-    const [sessions, setSessions] = React.useState({});
+    const params = useParams();
+    const [sessions, setSessions] = React.useState(null);
 
     useEffect(() => {
-        const promise = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${idFilme}/showtimes`);
-        promise.then((response) => {
-            setSessions(response.data);
+        const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/movies/${params.idFilme}/showtimes`);
+        promise.then((resp) => {
+            setSessions(resp.data);
         })
     }, []);
-
-    console.log(sessions);
+    
     return (
-        <div className='choise-session'>
-            <Command title='Selecione o horário' />
-            <Sessions sessionsDays={sessions.days} />
-            <MovieBaseboard />
-        </div>
+        sessions ? (
+            <div className='choise-session'>
+                <Command title='Selecione o horário' />
+                <Sessions sessionsDays={sessions.days} />
+                <MovieBaseboard sessions={sessions}/>
+            </div>
+        ) : ""        
     )
 }

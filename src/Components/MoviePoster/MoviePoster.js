@@ -1,10 +1,8 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './MoviePoster.css';
 
 export default function MoviePoster({id, posterURL}) {
-    const params = useParams();
-    params.idFilme = id;
-    const route = `/sessoes/${params.idFilme}`
+    const route = `/sessoes/${id}`
 
     return (
         <Link to={route}>

@@ -8,7 +8,7 @@ export default function ChooseMovieScreen() {
     const [movies, setMovies] = React.useState([]);
 
     useEffect(() => {
-        const promise = axios.get('https://mock-api.driven.com.br/api/v5/cineflex/movies');
+        const promise = axios.get('https://mock-api.driven.com.br/api/v7/cineflex/movies');
         promise.then((resp) => {
             setMovies(resp.data);
         })
