@@ -7,6 +7,15 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 
 export default function ChooseSessionScreen() {
+    const modelSession = {
+        id: 1,
+        name: "15:00",
+        day: {
+            id: 24062021,
+            weekday: "Quinta-feira",
+            date: "24/06/2021",
+        }
+    }
     const params = useParams();
     const [sessions, setSessions] = React.useState(null);
 
@@ -22,7 +31,7 @@ export default function ChooseSessionScreen() {
             <div className='choise-session'>
                 <Command title='Selecione o horário' />
                 <Sessions sessionsDays={sessions.days} />
-                <MovieBaseboard sessions={sessions}/>
+                <MovieBaseboard movie={sessions} sessionChosen={modelSession} />
             </div>
         ) : ""        
     )

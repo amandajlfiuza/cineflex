@@ -1,26 +1,19 @@
 import React from 'react';
 import './Seats.css';
 
-function Seat({classSeat, setClassSeat}) {
-    let renderSeat = "";
+export default function Seats({seats}) {
+    const [classSeat, setClassSeat] = React.useState('');
 
-    for (let i=0; i<50; i++) {
-        renderSeat += (
-            <div className={classSeat} onClick={() => setClassSeat('circle unavailable')}>
-                {i+1}
-            </div>)
-    }
-
-    return renderSeat;
-}
-
-export default function Seats() {
-    const [classSeat, setClassSeat] = React.useState('circle available');
+    const renderSeats = seats.map((seat, index) => (
+        <div key={index} className={seat.isAvailable ? 'circle available' : 'circle unavailable'}> 
+            {seat.name}
+        </div>)
+    );
 
     return (
         <div className='seats'>
             <div className='layout'>
-                
+                {renderSeats}
             </div>
             <div className='labels'>
                 <div className='label'>

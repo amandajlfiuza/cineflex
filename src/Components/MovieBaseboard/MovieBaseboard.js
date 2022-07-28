@@ -1,14 +1,15 @@
 import './MovieBaseboard.css';
 
-export default function MovieBaseboard({sessions}) {
+export default function MovieBaseboard({movie, sessionChosen}) {
+    console.log(sessionChosen);
     return (
         <div className='baseboard'>
             <div className='background'>
-                <img className='poster' src={sessions.posterURL} />
+                <img className='poster' src={movie.posterURL} />
             </div>
             <div className='info'>
-                <div className='title'>{sessions.title}</div>
-                <div className='session-time'>Quinta-feira - 15:00</div>
+                <div className='title'>{movie.title}</div>
+                <div className='session-time'>{`${sessionChosen.day.weekday} - ${sessionChosen.name}`}</div>
             </div>
         </div>
     )
