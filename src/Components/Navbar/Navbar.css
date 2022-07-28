@@ -1,0 +1,17 @@
+.navbar {
+    width: 100%;
+    height: 67px;
+    background-color: #C3CFD9;
+
+    color: #E8833A;
+    font-size: 34px;
+    line-height: 39.84px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}

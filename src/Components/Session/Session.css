@@ -1,0 +1,37 @@
+.session {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+.date {
+    width: 100%;
+    margin-bottom: 22px;
+    font-size: 20px;
+    line-height: 23.44px;
+    color: #293845;
+}
+.schedules {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.time {
+    width: 83px;
+    height: 43px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    border-radius: 3px;
+    background-color: #E8833A;
+
+    color: white;
+    font-size: 18px;
+    line-height: 21.09px;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -8,14 +8,16 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 export default function App() {
     return (
-        <BrowserRouter>
-            <Navbar />
-            <Routes>
-                <Route path='/' element={<ChooseMovieScreen />} />
-                <Route path='/filme' element={<ChooseSessionScreen />} />
-                <Route path='/sessao' element={<ChooseSeatsScreen />} />
-                <Route path='/sucesso' element={<SuccessScreen />} />
-            </Routes>
-        </BrowserRouter>
+        <div className='app' >
+            <BrowserRouter>
+                <Navbar />
+                <Routes>
+                    <Route path='/' element={<ChooseMovieScreen />} />
+                    <Route path='/sessoes/:idFilme' element={<ChooseSessionScreen />} />
+                    <Route path='/assentos/:idSessao' element={<ChooseSeatsScreen />} />
+                    <Route path='/sucesso' element={<SuccessScreen />} />
+                </Routes>
+            </BrowserRouter>
+        </div>
     )
 }

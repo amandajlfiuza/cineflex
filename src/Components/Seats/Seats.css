@@ -1,0 +1,61 @@
+.seats {
+    width: 320px;
+    height: 270px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+.layout {
+    width: 100%;
+    height: 220px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: space-between;
+}
+.labels {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+.label {
+    margin-left: 14px;
+    margin-right: 14px;
+}
+.circle {
+    width: 26px;
+    height: 26px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7px;
+    border-radius: 50%;
+
+    color: black;
+    font-size: 11px;
+    line-height: 12.89px;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.selected {
+    background-color: #8DD7CF;
+    border: 1px solid #1AAE9E;
+}
+.available {
+    background-color: #C3CFD9;
+    border: 1px solid #7B8B99;
+}
+.unavailable {
+    background-color: #FBE192;
+    border: 1px solid #F7C52B;
+}
+.subtitle {
+    color: #4E5A65;
+    font-size: 15px;
+    line-height: 15.23px;
+}

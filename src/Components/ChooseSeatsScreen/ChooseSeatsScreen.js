@@ -2,17 +2,17 @@ import './ChooseSeatsScreen.css';
 import Command from '../Command/Command';
 import Seats from '../Seats/Seats';
 import PurchaseForm from '../PurchaseForm/PurchaseForm';
-import BookSeatsButton from '../BookSeatsButton/BookSeatsButton';
+import Button from '../Button/Button';
 import MovieBaseboard from '../MovieBaseboard/MovieBaseboard';
 
 export default function ChooseSeatsScreen() {
     return (
-        <>
-            <Command />
+        <div className='choise-seats'>
+            <Command title='Selecione o(s) assento(s)' />
             <Seats />
             <PurchaseForm />
-            <BookSeatsButton />
+            <Button title="Reservar assento(s)" />
             <MovieBaseboard />
-        </>
+        </div>
     )
 }
