@@ -1,13 +1,14 @@
 import React from 'react';
 import './Seats.css';
 
-function Seat({seat, idsSeats}) {
+function Seat({seat, idsSeats, nameSeats}) {
     const [classSeat, setClassSeat] = React.useState('circle available');
 
     const select = (e) => {
         if (classSeat === 'circle available') {
             setClassSeat('circle selected');
             idsSeats.push(seat.id);
+            nameSeats.push(seat.name);
         } else {
             setClassSeat('circle available');
         }
@@ -20,11 +21,11 @@ function Seat({seat, idsSeats}) {
     )
 }
 
-export default function Seats({seats, idsSeats}) {
+export default function Seats({seats, idsSeats, nameSeats}) {
     return (
         <div className='seats'>
             <div className='layout'>
-                {seats.map((seat, index) => (<Seat  key={index} seat={seat} idsSeats={idsSeats} />))}
+                {seats.map((seat, index) => (<Seat  key={index} seat={seat} idsSeats={idsSeats} nameSeats={nameSeats} />))}
             </div>
             <div className='labels'>
                 <div className='label'>

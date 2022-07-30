@@ -11,6 +11,7 @@ export default function ChooseSeatsScreen() {
     const params = useParams();
     const [sessions, setSessions] = React.useState(null);
     const idsSeats = [];
+    const nameSeats = [];
 
     useEffect(() => {
         const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${params.idSessao}/seats`);
@@ -23,8 +24,8 @@ export default function ChooseSeatsScreen() {
         sessions ? (
         <div className='choise-seats'>
             <Command title='Selecione o(s) assento(s)' />
-            <Seats seats={sessions.seats} idsSeats={idsSeats} />
-            <PurchaseForm idsSeats={idsSeats} />
+            <Seats seats={sessions.seats} idsSeats={idsSeats} nameSeats={nameSeats} />
+            <PurchaseForm movie={sessions.movie} session={sessions} idsSeats={idsSeats} nameSeats={nameSeats} />
             <MovieBaseboard movie={sessions.movie} sessionChosen={sessions} />
         </div>
         ) : ""

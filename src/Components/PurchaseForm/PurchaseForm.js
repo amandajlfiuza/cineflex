@@ -1,11 +1,14 @@
 import axios from 'axios';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './PurchaseForm.css';
 
-export default function PurchaseForm({idsSeats}) {
+export default function PurchaseForm({movie, session, idsSeats, nameSeats}) {
     const [nameBuyer, setNameBuyer] = React.useState('');
     const [document, setDocument] = React.useState('');
+    const navigate = useNavigate();
     let idsSelected = idsSeats.filter((id, index) => idsSeats.indexOf(id) === index);
+    let seatsSelected = nameSeats.filter((name, index) => nameSeats.indexOf(name) === index);
 
     function postData(e) {
         e.preventDefault();
@@ -17,7 +20,7 @@ export default function PurchaseForm({idsSeats}) {
 
         const promise = axios.post("https://mock-api.driven.com.br/api/v7/cineflex/seats/book-many", send);
         promise.then(() => {
-            console.log(send);
+            navigate("/sucesso", {state: {movie, session, nameBuyer, document, seatsSelected}});
         })
     }
     
