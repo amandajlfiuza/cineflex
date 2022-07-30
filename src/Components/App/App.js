@@ -5,6 +5,7 @@ import ChooseSessionScreen from '../ChooseSessionScreen/ChooseSessionScreen';
 import ChooseSeatsScreen from '../ChooseSeatsScreen/ChooseSeatsScreen';
 import SuccessScreen from '../SuccessScreen/SuccessScreen';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from 'react';
 
 export default function App() {
     return (

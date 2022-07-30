@@ -2,7 +2,6 @@ import './ChooseSeatsScreen.css';
 import Command from '../Command/Command';
 import Seats from '../Seats/Seats';
 import PurchaseForm from '../PurchaseForm/PurchaseForm';
-import Button from '../Button/Button';
 import MovieBaseboard from '../MovieBaseboard/MovieBaseboard';
 import { useParams } from 'react-router-dom';
 import React, { useEffect } from 'react';
@@ -10,23 +9,23 @@ import axios from 'axios';
 
 export default function ChooseSeatsScreen() {
     const params = useParams();
-    const [seats, setSeats] = React.useState(null);
+    const [sessions, setSessions] = React.useState(null);
+    const idsSeats = [];
 
     useEffect(() => {
         const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${params.idSessao}/seats`);
         promise.then((resp) => {
-            setSeats(resp.data);
+            setSessions(resp.data);
         })
     }, [])
 
     return (
-        seats ? (
+        sessions ? (
         <div className='choise-seats'>
             <Command title='Selecione o(s) assento(s)' />
-            <Seats seats={seats.seats} />
-            <PurchaseForm />
-            <Button title="Reservar assento(s)" />
-            <MovieBaseboard movie={seats.movie} sessionChosen={seats} />
+            <Seats seats={sessions.seats} idsSeats={idsSeats} />
+            <PurchaseForm idsSeats={idsSeats} />
+            <MovieBaseboard movie={sessions.movie} sessionChosen={sessions} />
         </div>
         ) : ""
     )

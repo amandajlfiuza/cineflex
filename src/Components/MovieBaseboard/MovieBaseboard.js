@@ -1,7 +1,6 @@
 import './MovieBaseboard.css';
 
 export default function MovieBaseboard({movie, sessionChosen}) {
-    console.log(sessionChosen);
     return (
         <div className='baseboard'>
             <div className='background'>

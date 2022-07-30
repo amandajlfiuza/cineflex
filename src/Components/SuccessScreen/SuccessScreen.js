@@ -18,9 +18,9 @@ export default function SuccessScreen() {
                 <div className='success-message'>
                     Pedido feito com sucesso!
                 </div>
-                <Topic title="Filme e sessão" subtitle1="Enola Holmes" subtitle2="24/06/2021 15:00" />
-                <Topic title="Ingressos" subtitle1="Assento 15" subtitle2="Assento 16" />
-                <Topic title="Comprador" subtitle1="Nome: João da Silva Sauro" subtitle2="CPF: 123.456.789-10" />
+                <Topic title="Filme e sessão" subtitle1="{movie.title}" subtitle2="{`${sessions.date} ${sessions.name}`}" />
+                <Topic title="Ingressos" subtitle1={`Assento 15`} subtitle2="Assento 16" />
+                <Topic title="Comprador" subtitle1={`Nome: {nameBuyer}`} subtitle2={`CPF: {document}`} />
             </div>
             <Button title="Voltar para Home" />
         </div>
