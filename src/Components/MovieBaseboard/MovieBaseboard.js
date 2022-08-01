@@ -1,6 +1,6 @@
 import './MovieBaseboard.css';
 
-export default function MovieBaseboard({movie, sessionChosen}) {
+export default function MovieBaseboard({movie,sessionChosen}) {
     return (
         <div className='baseboard'>
             <div className='background'>

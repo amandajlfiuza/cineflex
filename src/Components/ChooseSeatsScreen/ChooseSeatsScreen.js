@@ -18,7 +18,7 @@ export default function ChooseSeatsScreen() {
         promise.then((resp) => {
             setSessions(resp.data);
         })
-    }, [])
+    }, []);
 
     return (
         sessions ? (

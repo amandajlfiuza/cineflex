@@ -1,15 +1,15 @@
 import React from 'react';
 import './Seats.css';
 
-function Seat({seat, idsSeats, setIdsSeats, nameSeats, setNameSeats}) {
+function Seat({seat,idsSeats,setIdsSeats,nameSeats,setNameSeats}) {
     const [classSeat, setClassSeat] = React.useState('circle available');
 
     const select = () => {
         if (classSeat === 'circle available') {
             setClassSeat('circle selected');
 
-            setIdsSeats([...idsSeats, seat.id]);
-            setNameSeats([...nameSeats, seat.name]);      
+            setIdsSeats([...idsSeats,seat.id]);
+            setNameSeats([...nameSeats,seat.name]);
 
         } else {
             setClassSeat('circle available');
@@ -28,12 +28,21 @@ function Seat({seat, idsSeats, setIdsSeats, nameSeats, setNameSeats}) {
         </div>
     )
 }
-
-export default function Seats({seats, idsSeats, setIdsSeats, nameSeats, setNameSeats}) {
+ 
+export default function Seats({seats,idsSeats,setIdsSeats,nameSeats,setNameSeats}) {
     return (
         <div className='seats'>
             <div className='layout'>
-                {seats.map((seat, index) => (<Seat  key={index} seat={seat} idsSeats={idsSeats} setIdsSeats={setIdsSeats} nameSeats={nameSeats} setNameSeats={setNameSeats} />))}
+                {seats.map((seat, index) => (
+                    <Seat 
+                        key={index} 
+                        seat={seat} 
+                        idsSeats={idsSeats} 
+                        setIdsSeats={setIdsSeats} 
+                        nameSeats={nameSeats} 
+                        setNameSeats={setNameSeats} 
+                    />)
+                )}
             </div>
             <div className='labels'>
                 <div className='label'>

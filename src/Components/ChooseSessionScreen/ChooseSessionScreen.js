@@ -1,4 +1,3 @@
-import './ChooseSessionScreen.css';
 import Command from '../Command/Command';
 import Sessions from '../Sessions/Sessions';
 import MovieBaseboard from '../MovieBaseboard/MovieBaseboard';
@@ -15,7 +14,7 @@ export default function ChooseSessionScreen() {
             weekday: "Quinta-feira",
             date: "24/06/2021",
         }
-    }
+    };
     const params = useParams();
     const [sessions, setSessions] = React.useState(null);
 

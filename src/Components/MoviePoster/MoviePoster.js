@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import './MoviePoster.css';
-
-export default function MoviePoster({id, posterURL, title}) {
-    const route = `/sessoes/${id}`
+export default function MoviePoster({id,posterURL,title}) {
+    const route = `/sessoes/${id}`;
 
     return (
         <Link to={route}>

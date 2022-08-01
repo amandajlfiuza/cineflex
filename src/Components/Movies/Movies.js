@@ -6,7 +6,7 @@ export default function Movies({movies}) {
         <MoviePoster 
             key={movie.id}
             id={movie.id}  
-            posterURL={movie.posterURL} 
+            posterURL={movie.posterURL}
             title={movie.title}
         />
         ));
