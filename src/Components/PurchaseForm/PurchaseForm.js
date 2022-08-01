@@ -7,8 +7,10 @@ export default function PurchaseForm({movie, session, idsSeats, nameSeats}) {
     const [nameBuyer, setNameBuyer] = React.useState('');
     const [document, setDocument] = React.useState('');
     const navigate = useNavigate();
-    let idsSelected = idsSeats.filter((id, index) => idsSeats.indexOf(id) === index);
-    let seatsSelected = nameSeats.filter((name, index) => nameSeats.indexOf(name) === index);
+    let idsSelected = idsSeats;
+    //let idsSelected = idsSeats.sort((a, b) => a - b);
+    let seatsSelected = nameSeats;
+    //let seatsSelected = nameSeats.sort((a, b) => a - b);
 
     function postData(e) {
         e.preventDefault();

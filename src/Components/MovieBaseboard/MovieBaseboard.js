@@ -4,7 +4,7 @@ export default function MovieBaseboard({movie, sessionChosen}) {
     return (
         <div className='baseboard'>
             <div className='background'>
-                <img className='poster' src={movie.posterURL} />
+                <img className='poster' src={movie.posterURL} alt={movie.title} />
             </div>
             <div className='info'>
                 <div className='title'>{movie.title}</div>
