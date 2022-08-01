@@ -7,10 +7,16 @@ export default function PurchaseForm({movie, session, idsSeats, nameSeats}) {
     const [nameBuyer, setNameBuyer] = React.useState('');
     const [document, setDocument] = React.useState('');
     const navigate = useNavigate();
-    let idsSelected = idsSeats;
-    //let idsSelected = idsSeats.sort((a, b) => a - b);
-    let seatsSelected = nameSeats;
-    //let seatsSelected = nameSeats.sort((a, b) => a - b);
+    let idsSelected = idsSeats.sort((a, b) => a - b);
+    let seatsSelected = nameSeats.sort((a, b) => a - b);
+
+    function maskDocument() {
+        if (document.length === 3 || document.length === 7) {
+            setDocument(`${document}.`);
+        } else if (document.length === 11) {
+            setDocument(`${document}-`);
+        }
+    }
 
     function postData(e) {
         e.preventDefault();
@@ -32,7 +38,7 @@ export default function PurchaseForm({movie, session, idsSeats, nameSeats}) {
             <input id="formName" type="text" placeholder="Digite seu nome..." value={nameBuyer} required onChange={e => setNameBuyer(e.target.value)} />
 
             <label htmlFor="formDocument">CPF do comprador:</label>
-            <input id="formDocument" type="number" placeholder="Digite seu CPF..." value={document} required onChange={e => setDocument(e.target.value)} />
+            <input id="formDocument" type="text" placeholder="Digite seu CPF..." value={document} required onChange={e => setDocument(e.target.value)} minLength="14" maxLength="14" onKeyUp={maskDocument} />
 
             <button type="submit">Reservar assento(s)</button>
         </form>

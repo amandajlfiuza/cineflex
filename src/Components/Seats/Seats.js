@@ -8,21 +8,17 @@ function Seat({seat, idsSeats, setIdsSeats, nameSeats, setNameSeats}) {
         if (classSeat === 'circle available') {
             setClassSeat('circle selected');
 
-            setIdsSeats(idsSeats.push(seat.id));
-            setNameSeats(nameSeats.push(seat.name));
-
-            console.log(`DPS DE MARCAR: ${idsSeats} - ${nameSeats}`);            
+            setIdsSeats([...idsSeats, seat.id]);
+            setNameSeats([...nameSeats, seat.name]);      
 
         } else {
             setClassSeat('circle available');
 
             let idsModified = idsSeats.filter((id) => id !== seat.id);
-            let nameModified = nameSeats.filter((name) => name !== seat.name);
+            let namesModified = nameSeats.filter((name) => name !== seat.name);
 
             setIdsSeats([...idsModified]);
-            setNameSeats([...nameModified]);
-
-            console.log(`DPS DE DESMARCAR: ${idsSeats} - ${nameSeats}`);
+            setNameSeats([...namesModified]);
         }
     }
 
